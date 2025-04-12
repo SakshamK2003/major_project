@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmConnect - Agricultural E-Marketplace</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Additional custom styles */
+    .hero-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+  <!-- Header/Navigation -->
+  <header class="bg-green-700 text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold flex items-center">
+        <i class="fas fa-leaf mr-2"></i>
+        FarmConnect
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-green-200 transition">Home</a>
+        <a href="#marketplace" class="hover:text-green-200 transition">Marketplace</a>
+        <a href="#features" class="hover:text-green-200 transition">Features</a>
+        <a href="#farm-loans" class="hover:text-green-200 transition">Farm Loans</a>
+        <a href="#disease-prediction" class="hover:text-green-200 transition">Disease Prediction</a>
+        <a href="#how-it-works" class="hover:text-green-200 transition">How It Works</a>
+        <a href="#testimonials" class="hover:text-green-200 transition">Testimonials</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a href="#cart" class="relative hover:text-green-200 transition">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="absolute -top-2 -right-2 bg-red-500 text-xs text-white rounded-full w-5 h-5 flex items-center justify-center">3</span>
+        </a>
+        <div class="flex items-center space-x-3">
+          <a href="#login" class="hover:text-green-200 transition">Login</a>
+          <a href="#register" class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg transition">
+            Register
+          </a>
+        </div>
+        <button id="mobileMenuToggle" class="md:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-green-800 px-4 py-2">
+      <nav class="flex flex-col space-y-3">
+        <a href="#home" class="hover:text-green-200 transition py-2">Home</a>
+        <a href="#marketplace" class="hover:text-green-200 transition py-2">Marketplace</a>
+        <a href="#features" class="hover:text-green-200 transition py-2">Features</a>
+        <a href="#farm-loans" class="hover:text-green-200 transition py-2">Farm Loans</a>
+        <a href="#disease-prediction" class="hover:text-green-200 transition py-2">Disease Prediction</a>
+        <a href="#how-it-works" class="hover:text-green-200 transition py-2">How It Works</a>
+        <a href="#testimonials" class="hover:text-green-200 transition py-2">Testimonials</a>
+        <a href="#login" class="hover:text-green-200 transition py-2">Login</a>
+        <a href="#register" class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg transition text-center">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-green-700 text-white py-16">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Connecting Farmers Directly with Buyers</h1>
+          <p class="text-xl mb-6">Cut out the middleman and get fair prices for your crops. Join our agricultural marketplace today.</p>
+          <div class="flex space-x-4">
+            <a href="#register" class="bg-white text-green-700 hover:bg-green-100 px-6 py-3 rounded-lg font-bold transition">
+              Register as Farmer
+            </a>
+            <a href="#marketplace" class="bg-green-600 hover:bg-green-500 px-6 py-3 rounded-lg font-bold transition">
+              Browse Marketplace
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Farmer with crops" class="rounded-lg shadow-xl" />
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Farm Loans Section -->
+    <section id="farm-loans" class="py-16 bg-green-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Farm Loan Facility</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Farm Financing" class="rounded-lg shadow-xl w-full" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Financial Support for Your Farm</h3>
+            <p class="text-gray-700 mb-6">Access affordable loans designed specifically for agricultural needs. Our farm loan program helps you invest in equipment, seeds, fertilizers, and expand your farming operations.</p>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+              <h4 class="font-bold text-lg mb-3">Loan Features</h4>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Low interest rates starting from 4.5% per annum</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Flexible repayment terms up to 7 years</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>No collateral required for loans up to $25,000</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Quick approval process with minimal documentation</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#loan-application" class="bg-green-600 hover:bg-green-500 text-white text-center px-6 py-3 rounded-lg font-bold transition">
+                Apply for Loan
+              </a>
+              <a href="#loan-calculator" class="border-2 border-green-600 text-green-600 hover:bg-green-50 text-center px-6 py-3 rounded-lg font-bold transition">
+                Loan Calculator
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Loan Options -->
+        <div class="mt-16">
+          <h3 class="text-2xl font-bold text-center mb-8">Loan Options Tailored for Farmers</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Loan Option 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-seedling text-2xl text-green-600"></i>
+              </div>
+              <h4 class="text-xl font-bold text-center mb-4">Crop Production Loan</h4>
+              <ul class="text-gray-700 space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>For seasonal crop expenses</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Up to $50,000</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Repay after harvest</span>
+                </li>
+              </ul>
+              <div class="mt-6 text-center">
+                <a href="#crop-loan" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition inline-block">
+                  Learn More
+                </a>
+              </div>
+            </div>
+            
+            <!-- Loan Option 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-tractor text-2xl text-green-600"></i>
+              </div>
+              <h4 class="text-xl font-bold text-center mb-4">Equipment Financing</h4>
+              <ul class="text-gray-700 space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>For tractors, machinery, tools</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Up to $200,000</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Terms up to 7 years</span>
+                </li>
+              </ul>
+              <div class="mt-6 text-center">
+                <a href="#equipment-loan" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition inline-block">
+                  Learn More
+                </a>
+              </div>
+            </div>
+            
+            <!-- Loan Option 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-home text-2xl text-green-600"></i>
+              </div>
+              <h4 class="text-xl font-bold text-center mb-4">Farm Expansion Loan</h4>
+              <ul class="text-gray-700 space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Land purchase, infrastructure</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Up to $500,000</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                  <span>Long-term financing available</span>
+                </li>
+              </ul>
+              <div class="mt-6 text-center">
+                <a href="#expansion-loan" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition inline-block">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disease Prediction Section -->
+    <section id="disease-prediction" class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Crop Disease Prediction</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Protect Your Crops with AI-Powered Detection</h3>
+            <p class="text-gray-700 mb-6">Our advanced disease prediction system uses artificial intelligence to identify crop diseases early, helping you prevent yield loss and maximize productivity.</p>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+              <h4 class="font-bold text-lg mb-3">How It Works</h4>
+              <ol class="space-y-3">
+                <li class="flex items-start">
+                  <div class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">1</div>
+                  <span><strong>Upload Photos</strong> - Take pictures of affected plants or crops and upload them to our platform</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">2</div>
+                  <span><strong>AI Analysis</strong> - Our AI model analyzes the images and identifies diseases with over 95% accuracy</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center mt-1 mr-3 flex-shrink-0">3</div>
+                  <span><strong>Get Results</strong> - Receive detailed diagnosis and treatment recommendations within minutes</span>
+                </li>
+              </ol>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#disease-scanner" class="bg-green-600 hover:bg-green-500 text-white text-center px-6 py-3 rounded-lg font-bold transition">
+                Try Disease Scanner
+              </a>
+              <a href="#disease-guide" class="border-2 border-green-600 text-green-600 hover:bg-green-50 text-center px-6 py-3 rounded-lg font-bold transition">
+                Disease Prevention Guide
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="bg-white p-6 rounded-lg shadow-xl">
+              <h4 class="font-bold text-xl mb-4 text-center">Disease Prediction Tool</h4>
+              <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center mb-6">
+                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                <p class="text-gray-500 mb-2">Upload an image of your crop</p>
+                <p class="text-gray-400 text-sm mb-4">Supported formats: JPG, PNG (max 10MB)</p>
+                <button class="bg-green-600 hover:bg-green-500 text-white px-6 py-2 rounded transition">
+                  Upload Image
+                </button>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Or select crop type:</label>
+                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
+                  <option>Select crop type</option>
+                  <option>Rice</option>
+                  <option>Wheat</option>
+                  <option>Corn</option>
+                  <option>Potato</option>
+                  <option>Tomato</option>
+                  <option>Apple</option>
+                  <option>Grape</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button class="bg-green-600 hover:bg-green-500 text-white px-8 py-3 rounded-lg font-bold transition w-full">
+                  Analyze Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Disease Prediction Stats -->
+        <div class="mt-16 bg-green-600 text-white rounded-lg p-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold mb-2">95%+</div>
+              <p>Disease Detection Accuracy</p>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2">40+</div>
+              <p>Crop Types Supported</p>
+            </div>
+            <div>
+              <div class="text-4xl font-bold mb-2">100+</div>
+              <p>Common Diseases Identified</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketplace Preview Section -->
+    <section id="marketplace" class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold">Featured Products</h2>
+          <a href="#view-all" class="text-green-600 hover:text-green-700 font-medium">View All Products <i class="fas fa-arrow-right ml-1"></i></a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Product Card 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition product-card">
+            <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Organic Rice" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <span class="text-green-600 font-medium">Grains</span>
+              <h3 class="font-bold text-xl mb-2">Organic Rice</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-900 font-bold">$25.00/kg</span>
+                <span class="text-gray-600 text-sm">California</span>
+              </div>
+              <div class="flex items-center mt-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(24 reviews)</span>
+              </div>
+              <div class="mt-4">
+                <a href="#product-details" class="block text-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition product-card">
+            <img src="https://images.unsplash.com/photo-1558818498-28c1e002b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Fresh Tomatoes" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <span class="text-green-600 font-medium">Vegetables</span>
+              <h3 class="font-bold text-xl mb-2">Fresh Tomatoes</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-900 font-bold">$3.50/kg</span>
+                <span class="text-gray-600 text-sm">Florida</span>
+              </div>
+              <div class="flex items-center mt-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(41 reviews)</span>
+              </div>
+              <div class="mt-4">
+                <a href="#product-details" class="block text-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition product-card">
+            <img src="https://images.unsplash.com/photo-1550828520-4cb496926fc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Organic Apples" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <span class="text-green-600 font-medium">Fruits</span>
+              <h3 class="font-bold text-xl mb-2">Organic Apples</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-900 font-bold">$4.20/kg</span>
+                <span class="text-gray-600 text-sm">Washington</span>
+              </div>
+              <div class="flex items-center mt-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(19 reviews)</span>
+              </div>
+              <div class="mt-4">
+                <a href="#product-details" class="block text-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product Card 4 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition product-card">
+            <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Pure Honey" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <span class="text-green-600 font-medium">Specialty</span>
+              <h3 class="font-bold text-xl mb-2">Pure Honey</h3>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-900 font-bold">$12.00/jar</span>
+                <span class="text-gray-600 text-sm">Montana</span>
+              </div>
+              <div class="flex items-center mt-2">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="text-gray-600 text-sm ml-2">(35 reviews)</span>
+              </div>
+              <div class="mt-4">
+                <a href="#product-details" class="block text-center bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded transition">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose FarmConnect?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-dollar-sign text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Better Prices</h3>
+            <p class="text-gray-600">Get fair market value for your crops by selling directly to buyers without middlemen taking a cut.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-shield-alt text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Secure Transactions</h3>
+            <p class="text-gray-600">Our platform ensures secure payments and verified buyers to protect your business interests.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-globe-americas text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Wider Market Access</h3>
+            <p class="text-gray-600">Reach a broader customer base beyond your local area, including retailers, restaurants, and processors.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-truck text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Logistics Support</h3>
+            <p class="text-gray-600">Get help with transportation and delivery options to get your produce to buyers efficiently.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-chart-line text-2xl text-green
+              <i class="fas fa-chart-line text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Market Insights</h3>
+            <p class="text-gray-600">Access valuable data on pricing trends, demand patterns, and market opportunities.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-users text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Community Support</h3>
+            <p class="text-gray-600">Join a network of farmers who share knowledge, resources, and best practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+            <h3 class="font-bold text-xl mb-2">Register</h3>
+            <p class="text-gray-600">Create your account as a farmer or buyer in just a few minutes.</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+            <h3 class="font-bold text-xl mb-2">List Products</h3>
+            <p class="text-gray-600">Add your crop listings with details, quantities, and prices.</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+            <h3 class="font-bold text-xl mb-2">Receive Orders</h3>
+            <p class="text-gray-600">Get notified when buyers place orders for your products.</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+            <h3 class="font-bold text-xl mb-2">Get Paid</h3>
+            <p class="text-gray-600">Receive secure payments directly to your account.</p>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a href="#register" class="bg-green-600 hover:bg-green-500 text-white px-8 py-3 rounded-lg font-bold transition">
+            Get Started Today
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-12 bg-green-700 text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold mb-2">500+</div>
+            <p>Farmers Registered</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2">2000+</div>
+            <p>Products Listed</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2">15000+</div>
+            <p>Completed Orders</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2">30+</div>
+            <p>States Covered</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-green-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">What Farmers Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <h4 class="font-bold">John Smith</h4>
+                <p class="text-gray-600 text-sm">Organic Vegetable Farmer</p>
+              </div>
+            </div>
+            <p class="text-gray-700">"Since joining FarmConnect, I've been able to sell my organic vegetables at better prices than the local market. The platform is easy to use and payments are always on time."</p>
+            <div class="flex text-yellow-400 mt-3">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <h4 class="font-bold">Maria Garcia</h4>
+                <p class="text-gray-600 text-sm">Fruit Orchard Owner</p>
+              </div>
+            </div>
+            <p class="text-gray-700">"FarmConnect has completely transformed our business. We now have direct relationships with restaurants and retailers in the city who value our premium fruits and pay accordingly."</p>
+            <div class="flex text-yellow-400 mt-3">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Farmer" class="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <h4 class="font-bold">Robert Johnson</h4>
+                <p class="text-gray-600 text-sm">Grain Producer</p>
+              </div>
+            </div>
+            <p class="text-gray-700">"The market insights provided by FarmConnect helped me understand when to sell my grains for maximum profit. Their logistics support also saved me money on transportation."</p>
+            <div class="flex text-yellow-400 mt-3">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-green-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Farming Business?</h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">Join thousands of farmers who are getting better prices, accessing new markets, and growing their operations with FarmConnect.</p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <a href="#register" class="bg-white text-green-700 hover:bg-green-100 px-8 py-3 rounded-lg font-bold transition">
+            Register Now
+          </a>
+          <a href="#learn-more" class="border-2 border-white hover:bg-green-700 px-8 py-3 rounded-lg font-bold transition">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">FarmConnect</h3>
+          <p class="text-green-200">Connecting farmers directly with buyers for a sustainable agricultural ecosystem.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-green-200 hover:text-white transition">Home</a></li>
+            <li><a href="#marketplace" class="text-green-200 hover:text-white transition">Marketplace</a></li>
+            <li><a href="#farm-loans" class="text-green-200 hover:text-white transition">Farm Loans</a></li>
+            <li><a href="#disease-prediction" class="text-green-200 hover:text-white transition">Disease Prediction</a></li>
+            <li><a href="#about" class="text-green-200 hover:text-white transition">About Us</a></li>
+            <li><a href="#contact" class="text-green-200 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">For Farmers</h4>
+          <ul class="space-y-2">
+            <li><a href="#register" class="text-green-200 hover:text-white transition">Join as Farmer</a></li>
+            <li><a href="#add-listing" class="text-green-200 hover:text-white transition">List Your Products</a></li>
+            <li><a href="#loan-application" class="text-green-200 hover:text-white transition">Apply for Loans</a></li>
+            <li><a href="#disease-scanner" class="text-green-200 hover:text-white transition">Crop Disease Scanner</a></li>
+            <li><a href="#resources" class="text-green-200 hover:text-white transition">Resources</a></li>
+            <li><a href="#pricing" class="text-green-200 hover:text-white transition">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contact Us</h4>
+          <address class="not-italic text-green-200">
+            <p>Email: info@farmconnect.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Agriculture Drive, Farmington, CA 94538</p>
+          </address>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-green-200 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-green-200 hover:text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-green-200 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-green-200 hover:text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-green-700 text-center text-green-300">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> FarmConnect. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal (Hidden by default) -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold text-gray-800">Login to FarmConnect</h3>
+        <button class="close-modal text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <form>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+          <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Enter your email">
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+          <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Enter your password">
+          <a href="#forgot-password" class="text-sm text-green-600 hover:text-green-700 mt-2 inline-block">Forgot your password?</a>
+        </div>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded-lg transition">
+          Login
+        </button>
+      </form>
+      <div class="mt-6 text-center">
+        <p class="text-gray-600">Don't have an account? <a href="#register" class="text-green-600 hover:text-green-700 font-medium">Register now</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for interactive elements -->
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      
+      // Login modal functionality
+      const loginLinks = document.querySelectorAll('a[href="#login"]');
+      const loginModal = document.getElementById('loginModal');
+      const closeModal = document.querySelector('.close-modal');
+      
+      if (loginLinks && loginModal && closeModal) {
+        loginLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.classList.remove('hidden');
+          });
+        });
+        
+        closeModal.addEventListener('click', function() {
+          loginModal.classList.add('hidden');
+        });
+        
+        // Close modal when clicking outside
+        loginModal.addEventListener('click', function(e) {
+          if (e.target === loginModal) {
+            loginModal.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
